@@ -11,9 +11,10 @@ const include = username.includes("lala".toUpperCase());
 const startWith = username.startsWith("d");
 const endsWith = username.endsWith("e");
 const split = username.split("Z");
-const filePath = "C:\Users\USER\OneDrive\Documentos\ts\index.js";
+const filePath = "C:/Users/USER/OneDrive/Documentos/ts/index.js";
 const getFileFormat = filePath.split(".");
 const reverseWord = "you Love I";
 const word = reverseWord.split(" ").reverse().join(" ");
+const splitFile = filePath.split("/").length;
 
-console.log(word);
+console.log(splitFile);
