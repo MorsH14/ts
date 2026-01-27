@@ -11,5 +11,3 @@ type TUser = [number, string];
 const newTUser: TUser = [1123, "MorsH"];
 
 newTUser[1] = "33";
-
-newTUser.push(true);
