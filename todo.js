@@ -36,3 +36,10 @@ markDone(1);
 deleteTask(0);
 
 showTasks();
+
+const array = ["food", "sleep", "eat"];
+
+for (let i = 0; i < array.length; i++) {
+  const doTask = array[2];
+  console.log(doTask);
+}
