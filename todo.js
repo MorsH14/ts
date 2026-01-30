@@ -43,3 +43,10 @@ for (let i = 0; i < array.length; i++) {
   const doTask = array[2];
   console.log(doTask);
 }
+
+const taskArray = ["food", "sleep", "eat"];
+
+for (let i = 0; i < array.length; i++) {
+  const doTask = array[i]; // use i instead of 2
+  console.log(doTask);
+}
