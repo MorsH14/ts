@@ -16,5 +16,12 @@ const getFileFormat = filePath.split(".");
 const reverseWord = "you Love I";
 const word = reverseWord.split(" ").reverse().join(" ");
 const splitFile = filePath.split("/").length;
+trim = "     Hello World     ".trim();
+const trimWord = "     Hello World     ".trim();
+const includeWord = username.includes("m");
 
-console.log(splitFile);
+const data = [10, 20, 30, 40, 50];
+
+const newPrice = data.map((d) => d + 10);
+
+console.log(newPrice);
