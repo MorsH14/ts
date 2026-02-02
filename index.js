@@ -10,7 +10,7 @@ const include = username.includes("lala".toUpperCase()); // checks if the string
 const startWith = username.startsWith("d"); // checks if the string starts with a substring
 const endsWith = username.endsWith("e"); // checks if the string ends with a substring
 const split = username.split("Z"); // splits the string by a specified separator
-const filePath = "C:/Users/USER/OneDrive/Documentos/ts/index.js"; // example file path
+const filePath = "C:/Users/USER/OneDrive/Documents/ts/index.js"; // example file path
 const getFileFormat = filePath.split("."); // splits the file path to get the file format
 const reverseWord = "you Love I"; // example string to reverse
 const word = reverseWord.split(" ").reverse().join(" "); // reverses the words in the string
@@ -18,9 +18,35 @@ const splitFile = filePath.split("/").length; // splits the file path by "/" and
 trim = "     Hello World     ".trim();
 const trimWord = "     Hello World     ".trim(); // trims whitespace from both ends of the string
 const includeWord = username.includes("m"); // checks if the string includes a substring
-
 const data = [10, 20, 30, 40, 50];
-
 const newPrice = data.map((d) => d + 10); // adds 10 to each element in the array
+const houses = [
+  "Villa lagos",
+  "Apartment abuja",
+  "Bungalow ilorin",
+  "Duplexn lagos",
+];
+const lagosHouses = houses.filter((house) => house.includes("lagos")); // filters houses that include "lagos"
 
-console.log(include);
+const prices = [100, 200, 300];
+
+const total = prices.reduce((sum, price) => sum + price, 0); // calculates the total sum of the prices
+
+console.log(total);
+
+console.log(lagosHouses);
+
+const properties = [
+  "Lagos Duplex",
+  "Abuja Apartment",
+  "Lagos Bungalow",
+  "Ibadan Flat",
+];
+
+const userSearch = "lagos";
+
+const result = properties.filter((property) =>
+  property.toLowerCase().includes(userSearch.toLowerCase()),
+);
+
+console.log(result);
