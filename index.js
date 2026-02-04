@@ -48,5 +48,9 @@ const userSearch = "lagos";
 const result = properties.filter((property) =>
   property.toLowerCase().includes(userSearch.toLowerCase()),
 );
-
+const nameFilter = (name) =>
+  properties.filter((property) =>
+    property.toLowerCase().includes(name.toLowerCase()),
+  );
+console.log(nameFilter("lagos"));
 console.log(result);
