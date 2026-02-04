@@ -54,3 +54,9 @@ const nameFilter = (name) =>
   );
 console.log(nameFilter("lagos"));
 console.log(result);
+
+for (let p = 0; p < properties.length; p++) {
+  if (properties[p].toLowerCase().includes(userSearch.toLowerCase())) {
+    console.log(properties[p]);
+  }
+}
