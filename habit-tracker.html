@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Habit Tracker</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        padding: 40px;
+      }
+
+      .app {
+        background: white;
+        padding: 20px;
+        width: 350px;
+        border-radius: 10px;
+      }
+
+      .add-habit {
+        display: flex;
+        gap: 10px;
+      }
+
+      input {
+        flex: 1;
+        padding: 8px;
+      }
+
+      button {
+        padding: 8px 12px;
+        cursor: pointer;
+      }
+
+      li {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+        padding: 6px;
+        background: #eee;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="app">
+      <h1>Habit Tracker</h1>
+
+      <div class="add-habit">
+        <input id="habitInput" type="text" placeholder="New habit..." />
+        <button id="addBtn">Add</button>
+      </div>
+
+      <ul id="habitList"></ul>
+    </div>
+
+    <script>
+      const input = document.getElementById("habitInput");
+      const addBtn = document.getElementById("addBtn");
+      const habitList = document.getElementById("habitList");
+
+      let habits = JSON.parse(localStorage.getItem("habits")) || [];
+
+      function saveHabits() {
+        localStorage.setItem("habits", JSON.stringify(habits));
+      }
+
+      function renderHabits() {
+        habitList.innerHTML = "";
+
+        habits.forEach((habit, index) => {
+          const li = document.createElement("li");
+
+          li.innerHTML = `
+          <span>${habit.name} 🔥 ${habit.streak}</span>
+          <div>
+            <button onclick="completeHabit(${index})">✔</button>
+            <button onclick="deleteHabit(${index})">❌</button>
+          </div>
+        `;
+
+          habitList.appendChild(li);
+        });
+      }
+
+      function addHabit() {
+        if (!input.value.trim()) return;
+
+        habits.push({
+          name: input.value,
+          streak: 0,
+        });
+
+        input.value = "";
+        saveHabits();
+        renderHabits();
+      }
+
+      function completeHabit(index) {
+        habits[index].streak++;
+        saveHabits();
+        renderHabits();
+      }
+
+      function deleteHabit(index) {
+        habits.splice(index, 1);
+        saveHabits();
+        renderHabits();
+      }
+
+      addBtn.addEventListener("click", addHabit);
+
+      renderHabits();
+    </script>
+  </body>
+</html>
